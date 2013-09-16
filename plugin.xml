@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+xmlns:android="http://schemas.android.com/apk/res/android"
+id="com.phonegap.plugins.video"
+version="0.0.1">
+  <name>Video</name>
+  <description>Android Video Plugin</description>
+  <license>Apache 2.0</license>
+  <keywords>cordova,video,android</keywords>
+
+  <platform name="android">
+    <config-file target="res/xml/config.xml" parent="/*">
+      <feature name="VideoPlayer" >
+        <param name="android-package" value="com.phonegap.plugins.video.VideoPlayer"/>
+      </feature>
+    </config-file>
+
+    <js-module src="www/android/video.js" name="video">
+      <merges target="window.videoPlayer" />
+    </js-module>
+
+    <source-file src="src/android/VideoPlayer.java" target-dir="src/com/phonegap/plugins/video" />
+  </platform>
+</plugin>
